@@ -1,27 +1,46 @@
 # ToDoAng
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
+A minimal to-do list app built with Angular — add tasks, see them in a list, and
+remove them. A small project for learning Angular fundamentals (components,
+two-way binding with `ngModel`, and `*ngFor`).
 
-## Development server
+## Features
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- Add a task from the input field (button or Enter key).
+- Render all tasks in a list.
+- Remove any task individually.
 
-## Code scaffolding
+Tasks live in component state only, so the list resets on page reload.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Tech
+
+- [Angular](https://angular.io) 15 (standalone Angular CLI project)
+- TypeScript
+- Bootstrap utility classes for layout
+
+## Getting started
+
+Requires Node.js and the Angular CLI.
+
+```bash
+npm install
+npm start        # ng serve
+```
+
+Then open <http://localhost:4200/>. The app reloads automatically when you edit a
+source file.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```bash
+npm run build    # outputs to dist/
+```
 
-## Running unit tests
+## Project structure
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```
+src/app/
+├── app.component.ts     # tasks array, addTask() / removeTask()
+├── app.component.html   # input, add button, task list
+└── app.module.ts        # root module (imports FormsModule for ngModel)
+```
